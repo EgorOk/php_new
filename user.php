@@ -59,10 +59,11 @@ if ($result->num_rows > 0)
    } else
       if (mail($email, "egorcud333@gmail.com", "Регистрация успешна", "Спасибо за регистрацию на сайте! Почта: $email")) {
       $qwe = "SELECT COUNT(1) FROM login";
-      $result = $db_connect->query($qwe);
-      $id = $result->fetch_array(MYSQLI_NUM);
-      $id_sum = count($id);
-      $query = "INSERT INTO `login`(id, login, email, password, status) VALUES ('$id_sum+1', $login', '$email', '$hash', 'user')";
+      $resultat = $db_connect->query($qwe);
+      $id = $resultat->fetch_array(MYSQLI_NUM);
+      $id_sum = count($id) + 1;
+
+      $query = "INSERT INTO `login`(id, login, email, password, status) VALUES ('$id_sum', '$login', '$email', '$hash', 'user')";
       if (!mysqli_query($db_connect, $query)) {
          header('Location: error_user.php');
       } else
