@@ -16,7 +16,7 @@ require_once("header.php");
             echo ' - ';
             echo $_SESSION['array_status'][$qwe];
     ?>
-        <?php if ($_SESSION['array_status'][$qwe] != "admin") : ?>
+        <?php if ($_SESSION['array_status'][$qwe] != "admin" && $_SESSION['status'] == 'admin') : ?>
             <a href="/user_delite.php?delite_user=<?php echo $_SESSION['array_email'][$qwe] ?>">Удалить пользователя</a>
         <?php endif; ?>
         <br />

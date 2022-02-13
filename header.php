@@ -57,9 +57,9 @@ if (!isset($_SESSION['entrance'])) {
                 </li>
 
             <?php else : ?>
-                <?php if ($_SERVER['REQUEST_URI'] == "/users.php" && $_SESSION['status'] == "admin") : ?>
+                <?php if ($_SERVER['REQUEST_URI'] == "/users.php") : ?>
                     Пользователи
-                <?php elseif ($_SESSION['status'] == "admin") : ?>
+                <?php else : ?>
                     <a href="/users_server.php">Пользователи</a>
                 <?php endif; ?>
                 <li>
