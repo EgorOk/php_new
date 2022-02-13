@@ -2,6 +2,7 @@
 require_once("header.php");
 ?>
 
+
 <div id="content">
     <h2>Пользователи сайта</h2>
     <?php
@@ -23,6 +24,7 @@ require_once("header.php");
         }
     ?>
 </div>
+
 
 <?php
 require_once("footer.php");
