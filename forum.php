@@ -19,7 +19,7 @@ if (isset($_SESSION['topic_name']))
 
     <?php
         if ($_SESSION['topic_author'][$qwe] == $_SESSION['login']) : ?>
-        <a href="/user_delite.php?delite_forum=<?php echo $_SESSION['topic_name'][$qwe] ?>">Удалить</a>
+        <a href="/user_delite.php?delite_forum=<?php echo $_SESSION['topic_id'][$qwe] ?>">Удалить</a>
 <?php endif;
         echo "</br>";
         echo "</br>";
