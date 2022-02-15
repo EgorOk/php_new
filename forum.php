@@ -39,6 +39,7 @@ if (isset($_SESSION['topic_name']))
     <button type="submit">Сохранить</button>
 </form>
 
+
 <?php
 require_once("footer.php");
 ?>
