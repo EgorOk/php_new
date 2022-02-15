@@ -59,6 +59,7 @@ function array_empty()
     return array();
 }
 
+
 function shetId($res)
 {
     $shet_id = array_empty();
