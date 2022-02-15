@@ -17,8 +17,7 @@ $db_connect = mysqli_connect('localhost', 'mysql', 'mysql', "login_email_passwor
     $qwe = "SELECT COUNT(1) FROM forum_topic";
     $resultat = $db_connect->query($qwe);
     $id = $resultat->fetch_array(MYSQLI_NUM);
-    $id_sum = count($id) + 1;
-
+    $id_sum = $id[0] + 1;
 
     $query = "INSERT INTO `forum_topic`(topic_id, topic_name, topic_preview, topic_author, time) VALUES ('$id_sum', '$name', '$preview', '$author', 'now()')";
     if (!mysqli_query($db_connect, $query)) {
@@ -30,10 +29,10 @@ $db_connect = mysqli_connect('localhost', 'mysql', 'mysql', "login_email_passwor
 $res = mysqli_query($db_connect, 'SELECT topic_id, topic_name, topic_preview, topic_author, time FROM forum_topic');
 
 $string_sql = 0;
-$topic_id = array_empty($topic_id);
-$topic_name = array_empty($topic_name);
-$topic_preview = array_empty($topic_preview);
-$topic_author = array_empty($topic_author);
+$topic_id = array_empty();
+$topic_name = array_empty();
+$topic_preview = array_empty();
+$topic_author = array_empty();
 $time = array_empty($time);
 $string_forum = 0;
 
@@ -46,7 +45,7 @@ while ($row = $res->fetch_array()) {
     $string_forum++;
 }
 if (isset($topic_name)) {
-    $_SESSION['topic_name'] = array_empty($_SESSION['topic_name']);
+    $_SESSION['topic_name'] = array_empty();
 
     $_SESSION['topic_id'] = $topic_id;
     $_SESSION['topic_name'] = $topic_name;
@@ -57,7 +56,7 @@ if (isset($topic_name)) {
 }
 header('Location: forum.php');
 
-function array_empty($arr)
+function array_empty()
 {
     return array();
 }
