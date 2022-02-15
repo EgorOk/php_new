@@ -34,6 +34,7 @@ $topic_author = array_empty();
 $time = array_empty($time);
 $string_forum = 0;
 
+
 while ($row = $res->fetch_array()) {
     $topic_id[$string_forum] = $row[0];
     $topic_name[$string_forum] = $row[1];
