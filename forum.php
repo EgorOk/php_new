@@ -1,5 +1,7 @@
 <?php
 require_once("header.php");
+require_once("forum_array.php");
+
 ?>
 
 <h2>Темы форума</h2>

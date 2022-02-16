@@ -64,7 +64,7 @@ if (!isset($_SESSION['entrance'])) {
                 <?php endif; ?>
                 <li>
                     <?php if ($_SERVER['REQUEST_URI'] != "/forum.php") : ?>
-                        <a href="/forum_server.php">
+                        <a href="/forum.php">
                         <?php endif; ?>
                         Форум</a>
                 </li>
