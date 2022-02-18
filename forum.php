@@ -35,7 +35,7 @@ if (isset($_SESSION['topic_name']))
     </p>
     <p>
         <label for="F_PREWIEW">Анонс:</label>
-        <textarea id="F_PASSWORD" name="preview" rows="5" cols="33" placeholder="Напишите анонс"></textarea>
+        <textarea name=" preview" rows="5" cols="33" placeholder="Напишите анонс"></textarea>
     </p>
     <button type="submit">Сохранить</button>
 </form>

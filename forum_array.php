@@ -1,6 +1,5 @@
 <?php
 $db_connect = mysqli_connect('localhost', 'mysql', 'mysql', "login_email_password") or die("mysql");
-
 $res = mysqli_query($db_connect, 'SELECT topic_id, topic_name, topic_preview, topic_author, time FROM forum_topic');
 
 $string_sql = 0;
