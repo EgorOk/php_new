@@ -17,7 +17,7 @@ if (isset($_SESSION['topic_name']))
         echo $_SESSION['topic_preview'][$qwe];
         echo "</br>";
 ?>
-    <a href="/forum_konstruktion.php?forum=<?php echo $_SESSION['topic_name'][$qwe] ?>">Открыть</a>
+    <a href="/forum_konstruktion.php?forum=<?php echo $_SESSION['topic_id'][$qwe] ?>">Открыть</a>
 
     <?php
         if ($_SESSION['topic_author'][$qwe] == $_SESSION['login']) : ?>
@@ -27,7 +27,7 @@ if (isset($_SESSION['topic_name']))
         echo "</br>";
     }
 ?>
-
+<hr>
 <h2>Создать новый тему форума</h2>
 <form action="http://test/forum_server.php?formForum=true" method="POST">
     <p>

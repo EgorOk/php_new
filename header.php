@@ -33,7 +33,6 @@ if (!isset($_SESSION['entrance'])) {
 
 <body>
     <div id="header">
-        <h2>Шапка сайта</h2>
         <ul class="hr">
             <li>
                 <?php if ($_SERVER['REQUEST_URI'] != "/index.php" && $_SERVER['REQUEST_URI'] != "http://test/") : ?>
@@ -81,4 +80,5 @@ if (!isset($_SESSION['entrance'])) {
                 ?>
             </li>
         </ul>
+        <hr>
     </div>
