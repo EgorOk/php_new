@@ -36,7 +36,7 @@ function preview($db_connect, $konstruktion_id)
 
     while ($row = $res1->fetch_array()) {
         if ($konstruktion_id == $row[0]) {
-            $_SESSION['konstruktion_id'][0] = $konstruktion_id;
+            $_SESSION['konstruktion_id'] = $konstruktion_id;
             $_SESSION['topic_name'][0] = $row[1];
             $_SESSION['topic_preview'][0] = $row[2];
             $_SESSION['topic_author'][0] = $row[3];

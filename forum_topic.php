@@ -13,7 +13,7 @@ for ($qwe = 0; $qwe < count($comments_number); $qwe++) {
     echo "</br>";
     echo $_SESSION['comments'][$comments_number[$qwe]]->$comment_messeng;
     echo "</br>";
-    echo $_SESSION['konstruktion_id'][0];
+    echo "</br>";
 }
 ?>
 
