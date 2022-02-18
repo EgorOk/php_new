@@ -5,7 +5,6 @@ if (!isset($_SESSION['entrance'])) {
     session_start();
 }
 
-$db_connect = mysqli_connect('localhost', 'mysql', 'mysql', "login_email_password") or die("mysql");
 require_once("forum_array.php");
 
 ?>
