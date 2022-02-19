@@ -16,10 +16,10 @@ if (isset($_SESSION['topic_name']))
         echo $_SESSION['topic_preview'][$qwe];
         echo "</br>";
 ?>
-    <a href="/forum_konstruktion.php?forum=<?php echo $_SESSION['topic_id'][$qwe] ?>">Открыть</a>
+    <a href="/forum_topic.php?forum=<?php echo $_SESSION['topic_id'][$qwe] ?>">Открыть</a>
 
     <?php
-        if ($_SESSION['topic_author'][$qwe] == $_SESSION['login']) : ?>
+        if ($_SESSION['topic_author'][$qwe] == $_SESSION['login'] || $_SESSION['status'] == "admin") : ?>
         <a href="/user_delite.php?delite_forum=<?php echo $_SESSION['topic_id'][$qwe] ?>">Удалить</a>
 <?php endif;
         echo "</br>";

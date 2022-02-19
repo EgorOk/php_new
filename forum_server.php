@@ -1,19 +1,18 @@
 <?php
-$formForum = $_GET['formForum'];
-$forum_topic = $_GET['forum_topic'];
-
-
 if (!isset($_SESSION['entrance'])) {
     session_start();
 }
+$formForum = $_GET['formForum'];
+$forum_topic = $_GET['forum_topic'];
+
+$preview = $_POST["preview"];
+$author = $_SESSION['login'];
 
 require_once("forum_array.php");
 
 ?>
 <?php if ($formForum) :
     $name = $_POST['name'];
-    $preview = $_POST["preview"];
-    $author = $_SESSION['login'];
     // $date = date('m/d/Y h:i:s a', time());
 
     $res = mysqli_query($db_connect, 'SELECT topic_id FROM forum_topic');
@@ -26,23 +25,18 @@ require_once("forum_array.php");
     header('Location: forum.php');
 ?>
 <?php elseif ($forum_topic) :
-    $preview = $_POST["preview"];
-    $author = $_SESSION['login'];
     // $date = date('m/d/Y h:i:s a', time());
     $id_sum = $_SESSION['konstruktion_id'];
-    echo $_SESSION['konstruktion_id'];
     $res = mysqli_query($db_connect, 'SELECT topic_id FROM comments');
     $comment_id = f_shetId($res);
 
-    $query = "INSERT INTO `comments`(topic_id, comment_id, comment_author, comment_messeng, comment_time) VALUES ('$id_sum', '$comment_id', '$preview', '$author', 'now()')";
+    $query = "INSERT INTO `comments`(comment_id, topic_id, comment_author, comment_messeng, comment_time) VALUES ('$comment_id', '$id_sum', '$author', '$preview', 'now()')";
     if (!mysqli_query($db_connect, $query)) {
         header('Location: error_user.php');
     }
-    // header('Location: forum_konstruktion.php?forum=$id_sum');
 ?>
 <?php endif;
 ?>
-
 
 <?php
 function f_shetId($res)
@@ -51,7 +45,7 @@ function f_shetId($res)
     $string_id = 0;
 
     while ($resultat = $res->fetch_array()) {
-        $shet_id[$string_id] = $resultat[1];
+        $shet_id[$string_id] = $resultat[0];
         $string_id++;
     }
 

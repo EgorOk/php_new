@@ -20,7 +20,7 @@ $delite_forum = $_GET['delite_forum'];
 <?php elseif ($delite_forum) :
     $sql = "DELETE FROM forum_topic WHERE topic_id='$delite_forum'";
     if (mysqli_query($db_connect, $sql)) {
-        header('Location: forum_server.php');
+        header('Location: forum.php');
     } else {
         header('Location: error_user.php');
     }
